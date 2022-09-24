@@ -1,0 +1,6 @@
+# Folders
+.vscode
+.venv
+build
+
+output.csv
