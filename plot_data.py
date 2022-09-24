@@ -11,5 +11,5 @@ def _read_csv(filename: str):
 if __name__ == '__main__':
     data = _read_csv(CSV_FILENAME)
 
-    data.plot()
+    data.plot(figsize=(12, 12/1.618))
     pyplot.show()
