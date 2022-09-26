@@ -29,7 +29,7 @@ void execute_recursive_averaging(
     RecursiveAveraging processor(time_constant, SAMPLE_RATE);
     processor.set_initial_value(0);
 
-    ofstream csv_file("output.csv");
+    ofstream csv_file("data/output.csv");
     csv_file << "noise_sample,smoothed_sample" << "\n";
 
     double smoothed_sample;
@@ -78,7 +78,7 @@ void execute_alpha_beta_filter(
     AlphaBetaFilter processor(alpha, beta, SAMPLE_RATE);
     processor.set_initial_value(0, 0);
 
-    ofstream csv_file("output_alpha_beta_filter.csv");
+    ofstream csv_file("data/output_alpha_beta_filter.csv");
     csv_file << "noise_sample,smoothed_sample,velocity" << "\n";
 
     double smoothed_sample = 0;

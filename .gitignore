@@ -1,7 +1,8 @@
 # Folders
 .vscode
 .venv
-build
+/build
 
-output.csv
-output_alpha_beta_filter.csv
+# Ignore data folder's content but not the folder
+/data/*
+!/data/.gitkeep
