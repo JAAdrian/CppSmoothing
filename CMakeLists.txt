@@ -3,7 +3,7 @@
 # set the project name
 project(Processor)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 
 # add the executable
 add_executable(Processor main.cpp processor.cpp)
