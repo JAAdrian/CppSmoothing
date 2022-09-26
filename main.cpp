@@ -3,6 +3,8 @@
 #include <vector>
 #include <random>
 #include <cmath>
+#include <filesystem>
+
 #include "processor.hpp"
 
 using namespace std;
@@ -11,6 +13,8 @@ const int SAMPLE_RATE = 1000;
 const int NUM_SECONDS = 3;
 const int BOUNDARY_ONE_SEC = 1;
 const int BOUNDARY_TWO_SEC = 2;
+
+const string DATA_DIRECTORY = "data";
 
 void execute_recursive_averaging(
     int num_total_samples,
@@ -29,6 +33,9 @@ void execute_recursive_averaging(
     RecursiveAveraging processor(time_constant, SAMPLE_RATE);
     processor.set_initial_value(0);
 
+    if (!filesystem::exists(DATA_DIRECTORY)) {
+        filesystem::create_directory(DATA_DIRECTORY);
+    }
     ofstream csv_file("data/output.csv");
     csv_file << "noise_sample,smoothed_sample" << "\n";
 
@@ -78,6 +85,9 @@ void execute_alpha_beta_filter(
     AlphaBetaFilter processor(alpha, beta, SAMPLE_RATE);
     processor.set_initial_value(0, 0);
 
+    if (!filesystem::exists(DATA_DIRECTORY)) {
+        filesystem::create_directory(DATA_DIRECTORY);
+    }
     ofstream csv_file("data/output_alpha_beta_filter.csv");
     csv_file << "noise_sample,smoothed_sample,velocity" << "\n";
 
