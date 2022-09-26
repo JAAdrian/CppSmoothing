@@ -1,10 +1,8 @@
 #include "processor.hpp"
 
-using namespace std;
-
 /* ============================================================================
         Recursive Averaging
-*/
+============================================================================ */
 
 RecursiveAveraging::RecursiveAveraging(double time_constant, int sample_rate) {
     this->alpha = 1 - exp(-1 / (time_constant * sample_rate));
@@ -26,7 +24,7 @@ void RecursiveAveraging::reset() {
 
 /* ============================================================================
         Alpha Beta Filter
-*/
+============================================================================ */
 
 AlphaBetaFilter::AlphaBetaFilter(double alpha, double beta, int sample_rate) {
     this->alpha = alpha;
