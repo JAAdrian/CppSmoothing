@@ -1,7 +1,7 @@
  cmake_minimum_required(VERSION 3.22)
 
 # set the project name
-project(Processor)
+project(processor VERSION 0.1.0)
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -23,4 +23,4 @@ gtest_discover_tests(processor_test)
 
 
 # add the executable
-add_library(processor SHARED main.cpp processor.cpp)
+add_executable(processor src/main.cpp src/processor.cpp)
