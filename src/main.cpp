@@ -5,7 +5,7 @@
 #include <cmath>
 #include <filesystem>
 
-#include "processor.hpp"
+#include "smoother.hpp"
 
 using namespace std;
 

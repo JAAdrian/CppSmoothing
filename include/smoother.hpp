@@ -25,8 +25,8 @@ class AlphaBetaFilter {
         void set_initial_value(double sample, double velocity);
         void step(
             double sample,
-            double& position,
-            double& velocity
+            double *position,
+            double *velocity
         );
         void reset();
 

@@ -1,7 +1,7 @@
  cmake_minimum_required(VERSION 3.22)
 
 # set the project name
-project(processor VERSION 0.1.0)
+project(smoother VERSION 0.1.0)
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -23,14 +23,15 @@ include(GoogleTest)
 gtest_discover_tests(processor_test)
 ######################################
 
-set(SOURCES src/main.cpp src/processor.hpp src/processor.cpp)
+set(SOURCES src/smoother.cpp src/processor.cpp)
 
 # add the executable
-add_executable(processor ${SOURCES})
+add_library(smoother SHARED ${SOURCES})
 
-target_include_directories(processor PUBLIC ./include)
+target_sources(smoother PRIVATE ./src)
+target_include_directories(smoother PUBLIC ./include)
 
-set_target_properties(processor PROPERTIES
+set_target_properties(smoother PROPERTIES
   VERSION ${PROJECT_VERSION}
   PUBLIC_HEADER include/processor.h
 )
